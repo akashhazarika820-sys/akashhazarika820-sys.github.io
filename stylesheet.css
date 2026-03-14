@@ -14,6 +14,37 @@ body {
 .peach {
 	background-color: #FFDAB9;
 	
+
+}
+
+.balloon{
+    position:absolute;
+    bottom:-150px;
+    width:50px;
+    height:70px;
+    background:url("b1.png") no-repeat center/contain;
+    animation:floatUp linear infinite;
+    cursor:pointer;
+}
+@media (max-width:600px){
+
+.balloons{
+    width:45px;
+    height:80px;
+    background-size:45px 80px;
+}
+
+.balloons h2{
+    font-size:16px;
+}
+
+}
+
+.pop{
+    animation:none;
+    transform:scale(1.5);
+    opacity:0;
+    transition:0.3s;
 }
 .peach-after {
 	-webkit-animation:peach_alive linear 8s infinite;
@@ -23,12 +54,75 @@ body {
 	animation:peach_alive linear 8s infinite;
 }
 
+
+    .balloons{
+    position: fixed;
+    bottom: -150px;
+    width: 60px;
+    height: 110px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: floatBalloon 12s linear infinite;
+}
+
+/* smoother floating animation */
+@keyframes floatBalloon{
+    0%{
+        transform: translateY(0) rotate(0deg);
+    }
+    50%{
+        transform: translateY(-500px) rotate(10deg);
+    }
+    100%{
+        transform: translateY(-1000px) rotate(-10deg);
+    }
+}
+
+/* random horizontal positions */
+#b1{ left:5%; animation-duration:12s; }
+#b2{ left:15%; animation-duration:10s; }
+#b3{ left:30%; animation-duration:14s; }
+#b4{ left:45%; animation-duration:11s; }
+#b5{ left:60%; animation-duration:13s; }
+#b6{ left:75%; animation-duration:9s; }
+#b7{ left:90%; animation-duration:12s; }
+
 @media (max-width:600px){
 .balloons{
     width:50px;
     height:90px;
     background-size:50px 90px;
 }
+}
+#balloon-container{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    pointer-events:none;
+}
+
+.balloon{
+    position:absolute;
+    bottom:-150px;
+    width:50px;
+    height:70px;
+    background:url("b1.png") no-repeat center/contain;
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+    50%{
+        transform:translateY(-50vh) rotate(10deg);
+    }
+    100%{
+        transform:translateY(-110vh) rotate(-10deg);
+        opacity:0.8;
+    }
 }
 
 @-webkit-keyframes peach_alive {
