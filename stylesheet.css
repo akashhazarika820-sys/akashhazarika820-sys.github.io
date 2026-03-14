@@ -23,6 +23,14 @@ body {
 	animation:peach_alive linear 8s infinite;
 }
 
+@media (max-width:600px){
+.balloons{
+    width:50px;
+    height:90px;
+    background-size:50px 90px;
+}
+}
+
 @-webkit-keyframes peach_alive {
 	0%{
 		background-color: #FFDAB9;
